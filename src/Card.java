@@ -4,8 +4,8 @@ public class Card {
     private int value;
 
     public Card(int cardValue, String cardSuit){
-           this.value = cardValue;
-           this.suit = cardSuit;
+        this.value = cardValue;
+        this.suit = cardSuit;
     }
 
     public String getSuit(){

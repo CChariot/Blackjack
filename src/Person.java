@@ -1,2 +1,5 @@
-public class Person {
+interface person{
+
+    void hit(Deck inputDeck);
+
 }

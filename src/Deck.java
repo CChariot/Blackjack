@@ -1,40 +1,34 @@
+import java.util.Random;
 
 public class Deck {
-    private Card [] currDeck = new Card[52];
+    public int totalDeck;
+    public Card [] currDeck;
     private int cardUsed;
 
-    public Deck(){
+    //constructor for multiple decks of card
+    public Deck(int input){
+        totalDeck = input;
+        currDeck= new Card[52 * input];
         String [] Suits = {"Spade", "Diamond", "Heart", "Club"};
-        int count = 0; //keeps track of total cards
-        int value = 1; //1-13 as Ace-King
-        int suitCount =0; //Pointer for Suits array
-        while(count <13){ //Ace - King, Spade
-            currDeck[count] = new Card(value, Suits[suitCount]);
-            value++;
-            count++;
-        }suitCount++; value = 1;
-        while(count <26){ //Ace - King, Diamond
-            currDeck[count] = new Card(value, Suits[suitCount]);
-            value++;
-            count++;
-        }suitCount++; value = 1;
-        while(count <39){ //Ace - King, Heart
-            currDeck[count] = new Card(value, Suits[suitCount]);
-            value++;
-            count++;
-        }suitCount++; value = 1;
-        while(count <52){ //Ace - King, Club
-            currDeck[count] = new Card(value, Suits[suitCount]);
-            value++;
-            count++;
+        int countCard = 0;
+        for(int decks = 0; decks < input; decks++) {
+            for (int i = 0; i < 4; i++) {
+                for (int j = 1; j < 14; j++) {
+                    currDeck[countCard] = new Card(j, Suits[i]);
+                    countCard++;
+                }
+            }
         }
-
         cardUsed =0;
-        }
+    }
 
     public void shuffle() {
-        for ( int i = 51; i > 0; i-- ) {
-            int random = (int)(Math.random()*(51));
+
+        Random randInt = new Random();
+        int totalCards = totalDeck * 52;
+        for ( int i = 0; i < totalCards; i++ ) {
+            int random = i + randInt.nextInt((totalCards) - i);
+            //Swap position
             Card temp = currDeck[i];
             currDeck[i] = currDeck[random];
             currDeck[random] = temp;
@@ -51,7 +45,10 @@ public class Deck {
     }
 
     public Card deal(){
-        if(cardUsed == 52) shuffle();
+        if(cardUsed == totalDeck * 52)
+        {
+            shuffle();
+        }
         cardUsed ++;
         return currDeck[cardUsed-1];
     }
