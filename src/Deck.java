@@ -37,7 +37,7 @@ public class Deck {
     }
 
     public Card getFirstCard(){
-        return currDeck[50];
+        return currDeck[0];
     }
 
     public int getCardLeft(){
