@@ -29,7 +29,13 @@ public class GameManager
 
         //initialize dealer
         Dealer myDealer = new Dealer();
-        System.out.println(myDealer.game_value);
+
+        //taking bets
+        for(int i = 0; i < player_in; i++){
+            Scanner scan3 = new Scanner(System.in);
+            System.out.print("Enter your betting amount for player " + (i+1) + "\t");
+            players_pool[i].bet_amount = scan3.nextInt();
+        }
 
         //deal cards for players
         //players get two cards at the beginning
@@ -38,7 +44,7 @@ public class GameManager
                 players_pool[j].hit(currDeck);
             }
         }
-        //deal first cards for dealer
+        //deal first card for dealer
         myDealer.hit(currDeck);
 
         //hitting for all players
@@ -50,41 +56,36 @@ public class GameManager
 
         //second card for dealer;
         myDealer.hit(currDeck);
+        System.out.println("Dealer has " + myDealer.game_value);
         //hitting for dealer
-        for(int i = 0; i< player_in; i++){
-            while(myDealer.shouldHit(players_pool[i],myDealer)){
-                myDealer.hit(currDeck);
-            }
+        while(myDealer.shouldHit(players_pool,myDealer)){
+            myDealer.hit(currDeck);
         }
+
+
+        System.out.println("Dealer has " + myDealer.game_value);
 
         //Determine winning
         for(int i = 0; i< player_in; i++){
             if(players_pool[i].game_value == myDealer.game_value){
                 //player got pushed, do nothing
             }
-            else if(players_pool[i].game_value > myDealer.game_value){
-                players_pool[i].money_left += 10;
-                myDealer.money_left -= 10;
+            else if(players_pool[i].game_value > myDealer.game_value && players_pool[i].game_value <= 21){
+                players_pool[i].money_left += players_pool[i].bet_amount;
+                myDealer.money_left -= players_pool[i].bet_amount;
             }
             else{
-                players_pool[i].money_left -= 10;
-                myDealer.money_left += 10;
+                players_pool[i].money_left -= players_pool[i].bet_amount;
+                myDealer.money_left += players_pool[i].bet_amount;
             }
         }
 
         for(int i = 0; i< player_in; i++){
-            System.out.println(players_pool[i].getMoney());
+            System.out.println("Player " + i + " has " + players_pool[i].game_value);
+            System.out.println("Player " + i + " now has " + players_pool[i].getMoney());
         }
 
-        //test section:
-        Card oneCard = new Card(1,"Spades");
-        System.out.println(oneCard.toString());
 
-        Deck myDeck = new Deck(3);
-        System.out.println(myDeck.getFirstCard().toString());
-
-        myDeck.shuffle();
-        System.out.println(myDeck.getFirstCard().toString());
     }
 
     boolean won(Dealer D, Player P){

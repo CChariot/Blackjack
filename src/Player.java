@@ -2,6 +2,7 @@ public class Player implements person {
 
     int game_value;
     int money_left;
+    int bet_amount;
 
     public Player(){
         game_value = 0;

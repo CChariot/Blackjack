@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0d392334-f9fc-4a53-967a-227f2253f43a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/Dealer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/Dealer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/Deck.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Blackjack/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/GameManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Dealer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dealer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />

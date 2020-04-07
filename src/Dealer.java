@@ -9,17 +9,18 @@ public class Dealer implements person {
         game_value += inputDeck.deal().getValue();
     }
 
-    @Override
-    public boolean shouldHit(Player P, Dealer D) {
-        if(D.game_value == 21){
+    public boolean shouldHit(Player [] P, Dealer D) {
+        int winning_count = 0;
+        for(Player x : P) {
+            if(x.game_value < D.game_value){
+                winning_count++;
+            }
+        }
+        if(winning_count >= (P.length/2) || D.game_value > 21){
             return false;
         }
-        else if(D.game_value < 17){
-            return true;
-        }
-        else {
-            return false;
-        }
+
+        return true;
     }
 
     public int getMoney(){
