@@ -18,23 +18,27 @@ public class Player implements person {
     }
 
     public boolean shouldHit(Player P, Dealer D){
-        if(P.game_value ==21){
+        if(P.game_value == 21){
             return false;
         }
-        else if(P.game_value < 12 && D.game_value > 5){
+        else if(P.game_value < 11){
             return true;
         }
-        else if(P.game_value <15 && D.game_value > 8){
+        else if(P.game_value < 12 && D.game_value > 9){
             return true;
         }
-        else{
+        else {
             return false;
         }
-
     }
 
     public int getMoney(){
         return money_left;
     }
 
+    @Override
+    public void cleanHand() {
+        game_value = 0;
+        bet_amount = 0;
+    }
 }

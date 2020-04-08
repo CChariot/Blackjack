@@ -16,14 +16,23 @@ public class Dealer implements person {
                 winning_count++;
             }
         }
-        if(winning_count >= (P.length/2) || D.game_value > 21){
+        if(winning_count <= (P.length/2)){
+            return true;
+        }
+        else if(D.game_value < 15){
+            return true;
+        }
+        else{
             return false;
         }
-
-        return true;
     }
 
     public int getMoney(){
         return money_left;
+    }
+
+    @Override
+    public void cleanHand() {
+        game_value = 0;
     }
 }

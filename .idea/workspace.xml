@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0d392334-f9fc-4a53-967a-227f2253f43a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/Dealer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/Dealer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Blackjack/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/GameManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Dealer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dealer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person.java" afterDir="false" />
@@ -28,6 +31,9 @@
   <component name="ProjectId" id="1YUi36fsSxEsgk8YjN2ZlOsLmfx" />
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -66,6 +72,14 @@
       <option name="presentableId" value="Default" />
       <updated>1584799618884</updated>
     </task>
+    <task id="LOCAL-00001" summary="Updated GameManager, Player and Dealer.">
+      <created>1586271923023</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586271923023</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -80,5 +94,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Updated GameManager, Player and Dealer." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated GameManager, Player and Dealer." />
   </component>
 </project>
