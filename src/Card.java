@@ -3,16 +3,16 @@ public class Card {
     private String suit;
     private int value;
 
-    public Card(int cardValue, String cardSuit){
+    Card(int cardValue, String cardSuit) {
         this.value = cardValue;
         this.suit = cardSuit;
     }
 
-    public String getSuit(){
+    private String getSuit() {
         return suit;
     }
 
-    public int getValue(){
+    int getValue() {
         return value;
     }
 

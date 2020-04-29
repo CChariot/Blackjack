@@ -3,8 +3,9 @@ public class Player implements person {
     int game_value;
     int money_left;
     int bet_amount;
+    boolean isFinal;
 
-    public Player(){
+    Player() {
         game_value = 0;
         money_left = 1000;
     }
@@ -17,19 +18,17 @@ public class Player implements person {
         money_left += amount;
     }
 
-    public boolean shouldHit(Player P, Dealer D){
+    boolean shouldDouble() {
+        return game_value == 11;
+    }
+
+    boolean shouldHit(Player P, Dealer D) {
         if(P.game_value == 21){
             return false;
         }
         else if(P.game_value < 11){
             return true;
-        }
-        else if(P.game_value < 12 && D.game_value > 9){
-            return true;
-        }
-        else {
-            return false;
-        }
+        } else return P.game_value < 12 && D.game_value > 9;
     }
 
     public int getMoney(){

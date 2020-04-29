@@ -1,4 +1,4 @@
-interface person{
+public interface person {
 
     void hit(Deck inputDeck);
 

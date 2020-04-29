@@ -1,12 +1,12 @@
 import java.util.Random;
 
-public class Deck {
-    public int totalDeck;
-    public Card [] currDeck;
+class Deck {
+    private int totalDeck;
+    private Card[] currDeck;
     private int cardUsed;
 
     //constructor for multiple decks of card
-    public Deck(int input){
+    Deck(int input) {
         totalDeck = input;
         currDeck= new Card[52 * input];
         String [] Suits = {"Spade", "Diamond", "Heart", "Club"};
@@ -22,7 +22,7 @@ public class Deck {
         cardUsed =0;
     }
 
-    public void shuffle() {
+    void shuffle() {
 
         Random randInt = new Random();
         int totalCards = totalDeck * 52;
@@ -36,15 +36,7 @@ public class Deck {
         cardUsed = 0;
     }
 
-    public Card getFirstCard(){
-        return currDeck[0];
-    }
-
-    public int getCardLeft(){
-        return 52 - cardUsed;
-    }
-
-    public Card deal(){
+    Card deal() {
         if(cardUsed == totalDeck * 52)
         {
             shuffle();

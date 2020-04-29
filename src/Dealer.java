@@ -1,15 +1,29 @@
 public class Dealer implements person {
-
+    private volatile static Dealer obj;
     int game_value = 0;
     int money_left = 100000;
 
-    public Dealer(){}
+    private Dealer() {
+    }
+
+    //singleton design pattern
+    static synchronized Dealer getInstance() {
+        if (obj == null) {
+            //make sure it's thread safe
+            synchronized (Dealer.class) {
+                if (obj == null) {
+                    obj = new Dealer();
+                }
+            }
+        }
+        return obj;
+    }
     @Override
     public void hit(Deck inputDeck){
         game_value += inputDeck.deal().getValue();
     }
 
-    public boolean shouldHit(Player [] P, Dealer D) {
+    boolean shouldHit(Player[] P, Dealer D) {
         int winning_count = 0;
         for(Player x : P) {
             if(x.game_value < D.game_value){
