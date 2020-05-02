@@ -120,55 +120,115 @@ public class GameManager implements gameProcess {
     private void dealFirstTwo(Player[] players_pool, Deck currDeck) {
         //deal cards for players
         //players get two cards at the beginning
-
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < player_in; j++) {
-                players_pool[j].hit(currDeck);
-            }
+        //using two for loops in order to keep track first card value and second card value
+        for (int j = 0; j < player_in; j++) {
+            players_pool[j].firstHit(currDeck);
         }
+        for (int j = 0; j < player_in; j++) {
+            players_pool[j].secondHit(currDeck);
+        }
+    }
+
+    boolean shouldSplit(Player player) {
+        return player.first_card == player.second_card;
     }
 
     @Override
     public void playersHit(Player[] players_pool, Dealer myDealer, Deck currDeck) {
+        players_pool[0].first_card = 10;
+        players_pool[0].second_card = 10;
+        players_pool[0].game_value = 20;
         for (int i = 0; i < player_in; i++) {
 
-            //takes care of Ace case:
-
+            //takes care of 11-game-value case:
             if (players_pool[i].shouldDouble()) {
                 players_pool[i].bet_amount *= 2;
                 players_pool[i].isFinal = true;
-            }
-            while (!players_pool[i].isFinal && players_pool[i].shouldHit(players_pool[i], myDealer)) {
                 players_pool[i].hit(currDeck);
             }
-            players_pool[i].isFinal = true;
+
+            //takes care of split case
+            if (shouldSplit(players_pool[i])) {
+                players_pool[i].split_amount = players_pool[i].bet_amount;
+                players_pool[i].isSplitted = true;
+                players_pool[i].split_game_value = players_pool[i].game_value / 2;
+                players_pool[i].game_value /= 2;
+                while (!players_pool[i].isFinal && players_pool[i].shouldHit(players_pool[i].split_game_value, myDealer)) {
+                    players_pool[i].splitHit(currDeck);
+                }
+            }
+            while (!players_pool[i].isFinal && players_pool[i].shouldHit(players_pool[i].game_value, myDealer)) {
+                players_pool[i].hit(currDeck);
+            }
         }
     }
+
+    public void countMoneyAction(Player player, Dealer myDealer) {
+        //player got pushed, do nothing
+        if (player.game_value == myDealer.game_value) {
+            //Dealer blackjack case
+        } else if (myDealer.game_value == 21) {
+            player.money_left -= player.bet_amount;
+            myDealer.money_left += player.bet_amount;
+            //Player blackjack case
+        } else if (player.game_value == 21) {
+            player.money_left += player.bet_amount;
+            myDealer.money_left -= player.bet_amount;
+            //player busted case
+        } else if (player.game_value > 21) {
+            player.money_left -= player.bet_amount;
+            myDealer.money_left += player.bet_amount;
+            //dealer busted case
+        } else if (myDealer.game_value > 21) {
+            player.money_left += player.bet_amount;
+            myDealer.money_left -= player.bet_amount;
+        } else if (player.game_value > myDealer.game_value && player.game_value <= 21) {
+            player.money_left += player.bet_amount;
+            myDealer.money_left -= player.bet_amount;
+        } else if (player.game_value < myDealer.game_value) {
+            player.money_left -= player.bet_amount;
+            myDealer.money_left += player.bet_amount;
+        }
+    }
+
+    //count money for split case
+    public void countSplitMoney(Player player, Dealer myDealer) {
+        //player got pushed, do nothing
+        if (player.split_game_value == myDealer.game_value) {
+            //Dealer blackjack case
+        } else if (myDealer.game_value == 21) {
+            player.money_left -= player.bet_amount;
+            myDealer.money_left += player.bet_amount;
+            //Player blackjack case
+        } else if (player.split_game_value == 21) {
+            player.money_left += player.bet_amount;
+            myDealer.money_left -= player.bet_amount;
+            //player busted case
+        } else if (player.split_game_value > 21) {
+            player.money_left -= player.bet_amount;
+            myDealer.money_left += player.bet_amount;
+            //dealer busted case
+        } else if (myDealer.game_value > 21) {
+            player.money_left += player.bet_amount;
+            myDealer.money_left -= player.bet_amount;
+        } else if (player.split_game_value > myDealer.game_value && player.split_game_value <= 21) {
+            player.money_left += player.bet_amount;
+            myDealer.money_left -= player.bet_amount;
+        } else if (player.split_game_value < myDealer.game_value) {
+            player.money_left -= player.bet_amount;
+            myDealer.money_left += player.bet_amount;
+        }
+    }
+
 
     @Override
     public void countMoney(Player[] players_pool, Dealer myDealer) {//pay or take money from player
         //Determine winning
         for (int i = 0; i < player_in; i++) {
-            if (players_pool[i].game_value == myDealer.game_value) {
-                //player got pushed, do nothing
-            } else if (myDealer.game_value == 21) {
-                players_pool[i].money_left -= players_pool[i].bet_amount;
-                myDealer.money_left += players_pool[i].bet_amount;
-            } else if (players_pool[i].game_value == 21) {
-                players_pool[i].money_left += players_pool[i].bet_amount;
-                myDealer.money_left -= players_pool[i].bet_amount;
-            } else if (players_pool[i].game_value > 21) {
-                players_pool[i].money_left -= players_pool[i].bet_amount;
-                myDealer.money_left += players_pool[i].bet_amount;
-            } else if (myDealer.game_value > 21) {
-                players_pool[i].money_left += players_pool[i].bet_amount;
-                myDealer.money_left -= players_pool[i].bet_amount;
-            } else if (players_pool[i].game_value > myDealer.game_value && players_pool[i].game_value <= 21) {
-                players_pool[i].money_left += players_pool[i].bet_amount;
-                myDealer.money_left -= players_pool[i].bet_amount;
-            } else if (players_pool[i].game_value < myDealer.game_value) {
-                players_pool[i].money_left -= players_pool[i].bet_amount;
-                myDealer.money_left += players_pool[i].bet_amount;
+            countMoneyAction(players_pool[i], myDealer);
+            //takes care of split case
+            if (players_pool[i].isSplitted) {
+                countSplitMoney(players_pool[i], myDealer);
             }
         }
     }
@@ -186,6 +246,9 @@ public class GameManager implements gameProcess {
         System.out.println("Dealer has " + myDealer.game_value);
 
         for (int i = 0; i < player_in; i++) {
+            if (players_pool[i].split_amount != 0) {
+                System.out.println("Player" + i + "'s split hand is " + players_pool[i].split_game_value);
+            }
             System.out.println("Player " + i + " has " + players_pool[i].game_value);
             System.out.println("Player " + i + " now has " + players_pool[i].getMoney());
         }
