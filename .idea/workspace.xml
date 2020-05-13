@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d392334-f9fc-4a53-967a-227f2253f43a" name="Default Changelist" comment="Implemented Singleton, Factory, Builder Design Patterns.">
+    <list default="true" id="0d392334-f9fc-4a53-967a-227f2253f43a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/AbstractStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AiStrategyFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CountStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FactoryProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MemorizeStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RandomStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Strategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StrategyFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TableStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/Card.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/Dealer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/Dealer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/Deck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/GameManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -34,7 +37,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -99,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588203912770</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed bug for split case, implemented various test cases.">
+      <created>1588379228924</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1588379228925</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,7 +129,8 @@
     <MESSAGE value="Updated GameManager, Player and Dealer." />
     <MESSAGE value="Fixed game_value repetition, edited hitting logic." />
     <MESSAGE value="Implemented Singleton, Factory, Builder Design Patterns." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Singleton, Factory, Builder Design Patterns." />
+    <MESSAGE value="Fixed bug for split case, implemented various test cases." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug for split case, implemented various test cases." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

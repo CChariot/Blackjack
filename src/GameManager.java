@@ -18,6 +18,20 @@ public class GameManager implements gameProcess {
     }
 
     void playGame() {
+        //initialize Strategies
+        AbstractStrategy StrategyFactory = FactoryProducer.getFactory(false);
+        Strategy RandomStrategy = StrategyFactory.getStrategy("Random");
+        Strategy TableStrategy = StrategyFactory.getStrategy("Table");
+
+        AbstractStrategy StrategyFactory1 = FactoryProducer.getFactory(true);
+        Strategy CountStrategy = StrategyFactory1.getStrategy("Count");
+        Strategy MemorizeStrategy = StrategyFactory1.getStrategy("Memorize");
+
+        RandomStrategy.testOutput();
+        TableStrategy.testOutput();
+        CountStrategy.testOutput();
+        MemorizeStrategy.testOutput();
+        //end of initializing Strategies.
 
         //initializing the game
         initializeDeck();
@@ -247,7 +261,7 @@ public class GameManager implements gameProcess {
 
         for (int i = 0; i < player_in; i++) {
             if (players_pool[i].split_amount != 0) {
-                System.out.println("Player" + i + "'s split hand is " + players_pool[i].split_game_value);
+                System.out.println("Player " + i + "'s split hand is " + players_pool[i].split_game_value);
             }
             System.out.println("Player " + i + " has " + players_pool[i].game_value);
             System.out.println("Player " + i + " now has " + players_pool[i].getMoney());
