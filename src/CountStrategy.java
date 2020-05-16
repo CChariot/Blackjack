@@ -1,6 +1,6 @@
 public class CountStrategy implements Strategy {
     @Override
-    public boolean betting() {
+    public boolean betting(int gameValue, Dealer myDealer) {
         return true;
     }
 

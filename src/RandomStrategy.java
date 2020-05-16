@@ -1,7 +1,13 @@
+import java.util.Random;
+
 public class RandomStrategy implements Strategy {
+
     @Override
-    public boolean betting() {
-        return true;
+    public boolean betting(int gameValue, Dealer myDealer) {
+        Random randInt = new Random();
+
+        int random = 0 + randInt.nextInt(1);
+        return random == 0 ? true : false;
     }
 
     public void testOutput() {

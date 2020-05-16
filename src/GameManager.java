@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 //Using Builder Design Pattern
@@ -17,7 +18,7 @@ public class GameManager implements gameProcess {
         return obj;
     }
 
-    void playGame() {
+    void playGame() throws IOException {
         //initialize Strategies
         AbstractStrategy StrategyFactory = FactoryProducer.getFactory(false);
         Strategy RandomStrategy = StrategyFactory.getStrategy("Random");
@@ -31,6 +32,7 @@ public class GameManager implements gameProcess {
         TableStrategy.testOutput();
         CountStrategy.testOutput();
         MemorizeStrategy.testOutput();
+
         //end of initializing Strategies.
 
         //initializing the game
