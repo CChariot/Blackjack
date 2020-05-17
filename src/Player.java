@@ -7,32 +7,41 @@ public class Player implements person {
     int second_card;
     boolean isFinal;
     //variables to take care of split case;
-    boolean isSplitted;
+    boolean isSplit;
     int split_amount;
     int split_game_value;
-
 
     Player() {
         game_value = 0;
         money_left = 1000;
     }
 
+    public int addCount(int input) {
+        if (input < 6) return 1;
+        else if (input > 8 && input < 14) return -1;
+        else return 0;
+    }
+
     public void firstHit(Deck inputDeck) {
-        game_value += inputDeck.deal().getValue();
-        first_card = inputDeck.deal().getValue();
+        int value = inputDeck.deal().getValue();
+        game_value += value;
+        first_card = value;
     }
 
     public void secondHit(Deck inputDeck) {
-        game_value += inputDeck.deal().getValue();
-        first_card = inputDeck.deal().getValue();
+        int value = inputDeck.deal().getValue();
+        game_value += value;
+        first_card = value;
     }
 
     public void splitHit(Deck inputDeck) {
-        split_game_value += inputDeck.deal().getValue();
+        int value = inputDeck.deal().getValue();
+        split_game_value += value;
     }
     @Override
     public void hit(Deck inputDeck){
-        game_value += inputDeck.deal().getValue();
+        int value = inputDeck.deal().getValue();
+        game_value += value;
     }
 
     public void deposit(int amount){

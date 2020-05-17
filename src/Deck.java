@@ -1,13 +1,21 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 class Deck {
+
     private int totalDeck;
     private Card[] currDeck;
     private int cardUsed;
+    List<Integer> DealtCard = new ArrayList<>();
+
+    int totalCard;
 
     //constructor for multiple decks of card
     Deck(int input) {
         totalDeck = input;
+        totalCard = 52 * input;
         currDeck= new Card[52 * input];
         String [] Suits = {"Spade", "Diamond", "Heart", "Club"};
         int countCard = 0;
@@ -23,10 +31,13 @@ class Deck {
     }
 
     void shuffle() {
+        for (int i = 0; i < DealtCard.size(); i++) {
+            DealtCard.set(i, 0);
+        }
 
         Random randInt = new Random();
         int totalCards = totalDeck * 52;
-        for ( int i = 0; i < totalCards; i++ ) {
+        for (int i = 0; i < totalCards; i++ ) {
             int random = i + randInt.nextInt((totalCards) - i);
             //Swap position
             Card temp = currDeck[i];
@@ -37,11 +48,14 @@ class Deck {
     }
 
     Card deal() {
-        if(cardUsed == totalDeck * 52)
-        {
+        if(cardUsed == totalDeck * 52) {
             shuffle();
         }
+
         cardUsed ++;
+
+        DealtCard.add(currDeck[cardUsed - 1].getValue());
+
         return currDeck[cardUsed-1];
     }
 }

@@ -3,7 +3,7 @@ import java.util.Random;
 public class RandomStrategy implements Strategy {
 
     @Override
-    public boolean betting(int gameValue, Dealer myDealer) {
+    public boolean betting(Deck currDeck, int gameValue, Dealer myDealer) {
         Random randInt = new Random();
 
         int random = 0 + randInt.nextInt(1);

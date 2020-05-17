@@ -5,7 +5,7 @@ public class TableStrategy implements Strategy {
     boolean shouldBet = false;
     int hitPercentage = 0;
 
-    public boolean betting(int gameValue, Dealer myDealer) throws IOException {
+    public boolean betting(Deck currDeck, int gameValue, Dealer myDealer) throws IOException {
         GetPropertyValues properties = new GetPropertyValues();
         String stringValue = Integer.toString(gameValue);
 

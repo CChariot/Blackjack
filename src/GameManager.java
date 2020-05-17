@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 //Using Builder Design Pattern
 public class GameManager implements gameProcess {
+
     private static GameManager obj;
     private int deck_used;
     private int player_in;
@@ -139,6 +140,7 @@ public class GameManager implements gameProcess {
         //using two for loops in order to keep track first card value and second card value
         for (int j = 0; j < player_in; j++) {
             players_pool[j].firstHit(currDeck);
+
         }
         for (int j = 0; j < player_in; j++) {
             players_pool[j].secondHit(currDeck);
@@ -166,7 +168,7 @@ public class GameManager implements gameProcess {
             //takes care of split case
             if (shouldSplit(players_pool[i])) {
                 players_pool[i].split_amount = players_pool[i].bet_amount;
-                players_pool[i].isSplitted = true;
+                players_pool[i].isSplit = true;
                 players_pool[i].split_game_value = players_pool[i].game_value / 2;
                 players_pool[i].game_value /= 2;
                 while (!players_pool[i].isFinal && players_pool[i].shouldHit(players_pool[i].split_game_value, myDealer)) {
@@ -243,7 +245,7 @@ public class GameManager implements gameProcess {
         for (int i = 0; i < player_in; i++) {
             countMoneyAction(players_pool[i], myDealer);
             //takes care of split case
-            if (players_pool[i].isSplitted) {
+            if (players_pool[i].isSplit) {
                 countSplitMoney(players_pool[i], myDealer);
             }
         }

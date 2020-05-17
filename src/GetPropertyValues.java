@@ -3,11 +3,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public class GetPropertyValues {
-    String result = "";
-    InputStream inputStream;
+class GetPropertyValues {
+    private String result = "";
+    private InputStream inputStream;
 
-    public String getPropValues(String value) throws IOException {
+    String getPropValues(String value) throws IOException {
 
         try {
             Properties prop = new Properties();
@@ -23,13 +23,13 @@ public class GetPropertyValues {
 
 
             // get the property value and print it out
-            String stringValue = prop.getProperty(value);
 
-            result = stringValue;
+            result = prop.getProperty(value);
 
         } catch (Exception e) {
             System.out.println("Exception: " + e);
         } finally {
+            assert inputStream != null;
             inputStream.close();
         }
         return result;
