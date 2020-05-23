@@ -3,16 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0d392334-f9fc-4a53-967a-227f2253f43a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/GameManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CountStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CountStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GetPropertyValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GetPropertyValues.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MemorizeStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MemorizeStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RandomStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RandomStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Strategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Strategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TableStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/Deck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/Player.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589587651324</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Implemented Memorize Strategy">
+      <created>1589688997964</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1589688997964</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,7 +161,8 @@
     <MESSAGE value="Fixed bug for split case, implemented various test cases." />
     <MESSAGE value="Implemented 4 different AI Strategy Classes Using Abstract Factory Design Pattern" />
     <MESSAGE value="Added Config file and GetPropertyValue class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Config file and GetPropertyValue class" />
+    <MESSAGE value="Implemented Memorize Strategy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented Memorize Strategy" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
