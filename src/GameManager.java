@@ -123,15 +123,20 @@ public class GameManager implements gameProcess {
 
     @Override
     public void takeBetting(Player[] players_pool) {
+//        for (int i = 0; i < player_in; i++) {
+//            Scanner scan3 = new Scanner(System.in);
+//            System.out.print("Enter your betting amount for player " + (i + 1) + "\t");
+//            players_pool[i].bet_amount = scan3.nextInt();
+//            while (players_pool[i].bet_amount > players_pool[i].money_left) {
+//                System.out.print("Please enter amount less or equal to what you have");
+//                players_pool[i].bet_amount = scan3.nextInt();
+//            }
+//        }
+
         for (int i = 0; i < player_in; i++) {
-            Scanner scan3 = new Scanner(System.in);
-            System.out.print("Enter your betting amount for player " + (i + 1) + "\t");
-            players_pool[i].bet_amount = scan3.nextInt();
-            while (players_pool[i].bet_amount > players_pool[i].money_left) {
-                System.out.print("Please enter amount less or equal to what you have");
-                players_pool[i].bet_amount = scan3.nextInt();
-            }
+            players_pool[i].bet_amount = 1;
         }
+
     }
 
     private void dealFirstTwo(Player[] players_pool, Deck currDeck) {
@@ -153,9 +158,7 @@ public class GameManager implements gameProcess {
 
     @Override
     public void playersHit(Player[] players_pool, Dealer myDealer, Deck currDeck) {
-        players_pool[0].first_card = 10;
-        players_pool[0].second_card = 10;
-        players_pool[0].game_value = 20;
+
         for (int i = 0; i < player_in; i++) {
 
             //takes care of 11-game-value case:

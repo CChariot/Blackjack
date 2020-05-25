@@ -9,7 +9,7 @@ class Deck {
     private Card[] currDeck;
     private int cardUsed;
     List<Integer> DealtCard = new ArrayList<>();
-
+    int count;
     int totalCard;
 
     //constructor for multiple decks of card
@@ -55,7 +55,8 @@ class Deck {
         cardUsed ++;
 
         DealtCard.add(currDeck[cardUsed - 1].getValue());
-
+        if (currDeck[cardUsed - 1].getValue() < 6) count++;
+        else if (currDeck[cardUsed - 1].getValue() > 8) count--;
         return currDeck[cardUsed-1];
     }
 }

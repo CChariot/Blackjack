@@ -3,8 +3,8 @@ public class Player implements person {
     int game_value;
     int money_left;
     int bet_amount;
-    int first_card;
-    int second_card;
+    int first_card = 0;
+    int second_card = 0;
     boolean isFinal;
     //variables to take care of split case;
     boolean isSplit;
@@ -31,7 +31,7 @@ public class Player implements person {
     public void secondHit(Deck inputDeck) {
         int value = inputDeck.deal().getValue();
         game_value += value;
-        first_card = value;
+        second_card = value;
     }
 
     public void splitHit(Deck inputDeck) {
@@ -68,5 +68,11 @@ public class Player implements person {
     public void cleanHand() {
         game_value = 0;
         bet_amount = 0;
+        first_card = 0;
+        second_card = 0;
+        isFinal = false;
+        isSplit = false;
+        split_amount = 0;
+        split_game_value = 0;
     }
 }

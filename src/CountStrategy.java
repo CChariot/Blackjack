@@ -3,7 +3,11 @@ public class CountStrategy implements Strategy {
 
     @Override
     public boolean betting(Deck currDeck, int gameValue, Dealer myDealer) {
-        return true;
+        if (currDeck.count > currDeck.totalCard / 2) return true;
+
+        else {
+            return false;
+        }
     }
 
     public void testOutput() {
