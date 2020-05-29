@@ -2,21 +2,21 @@ import java.io.IOException;
 import java.util.Scanner;
 
 //Using Builder Design Pattern
-public class GameManager implements gameProcess {
-
-    private static GameManager obj;
+public class RandomGameManager implements gameProcess {
+    private static RandomGameManager obj;
     private int deck_used;
     private int player_in;
     private int Player_won;
     private int Dealer_won;
     private int draw;
+
     //constructor
-    public GameManager() {
+    public RandomGameManager() {
     }
 
     //Singleton Design Pattern
-    static synchronized GameManager getInstance() {
-        if (obj == null) obj = new GameManager();
+    static synchronized RandomGameManager getInstance() {
+        if (obj == null) obj = new RandomGameManager();
 
         return obj;
     }
@@ -25,16 +25,9 @@ public class GameManager implements gameProcess {
         //initialize Strategies
         AbstractStrategy StrategyFactory = FactoryProducer.getFactory(false);
         Strategy RandomStrategy = StrategyFactory.getStrategy("Random");
-        Strategy TableStrategy = StrategyFactory.getStrategy("Table");
-
-        AbstractStrategy StrategyFactory1 = FactoryProducer.getFactory(true);
-        Strategy CountStrategy = StrategyFactory1.getStrategy("Count");
-        Strategy MemorizeStrategy = StrategyFactory1.getStrategy("Memorize");
 
         RandomStrategy.testOutput();
-        TableStrategy.testOutput();
-        CountStrategy.testOutput();
-        MemorizeStrategy.testOutput();
+
 
         //end of initializing Strategies.
 
@@ -50,16 +43,16 @@ public class GameManager implements gameProcess {
         currDeck.shuffle();
 
         //initialize players pool
-        Player [] players_pool = new Player[player_in];
+        Player[] players_pool = new Player[player_in];
         //initialize every players using Factory Design Pattern
-        for(int i = 0; i < player_in; i++){
+        for (int i = 0; i < player_in; i++) {
             players_pool[i] = (Player) PlayerFactory.getPlayer("Player");
         }
 
         //initialize dealer
         Dealer myDealer = (Dealer) PlayerFactory.getPlayer("Dealer");
 
-        while(!needsRefill(players_pool)) {
+        while (!needsRefill(players_pool)) {
             //taking bets
             takeBetting(players_pool);
 
@@ -81,11 +74,11 @@ public class GameManager implements gameProcess {
             }
 
             //pay or take money from player
-            countMoney(players_pool,myDealer);
+            countMoney(players_pool, myDealer);
             //display money for each player
             displayMoney(players_pool, myDealer);
             //clean players and dealer hand
-            cleanTable(players_pool,myDealer);
+            cleanTable(players_pool, myDealer);
         }
         System.out.format("Player won: %d games, Dealer won: %d games. Amount of draw: %d.", Player_won, Dealer_won, draw);
     }
@@ -115,8 +108,8 @@ public class GameManager implements gameProcess {
     @Override
     public boolean needsRefill(Player[] players_pool) {
 
-        for(Player x : players_pool){
-            if(x.money_left == 0){
+        for (Player x : players_pool) {
+            if (x.money_left == 0) {
                 return true;
             }
         }
@@ -176,11 +169,11 @@ public class GameManager implements gameProcess {
                 players_pool[i].isSplit = true;
                 players_pool[i].split_game_value = players_pool[i].game_value / 2;
                 players_pool[i].game_value /= 2;
-                while (!players_pool[i].isFinal && players_pool[i].shouldHit(players_pool[i].split_game_value, myDealer)) {
+                while (!players_pool[i].isFinal && RandomStrategy.betting(currDeck, players_pool[i].split_game_value, myDealer)) {
                     players_pool[i].splitHit(currDeck);
                 }
             }
-            while (!players_pool[i].isFinal && players_pool[i].shouldHit(players_pool[i].game_value, myDealer)) {
+            while (!players_pool[i].isFinal && RandomStrategy.betting(currDeck, players_pool[i].game_value, myDealer)) {
                 players_pool[i].hit(currDeck);
             }
         }
@@ -273,7 +266,7 @@ public class GameManager implements gameProcess {
 
     @Override
     public void cleanTable(Player[] players_pool, Dealer myDealer) {
-        for(Player x: players_pool){
+        for (Player x : players_pool) {
             x.cleanHand();
         }
         myDealer.cleanHand();
@@ -291,5 +284,6 @@ public class GameManager implements gameProcess {
             System.out.println("Player " + i + " now has " + players_pool[i].getMoney());
         }
     }
+
 
 }

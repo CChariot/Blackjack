@@ -2,12 +2,14 @@ import java.util.Random;
 
 public class RandomStrategy implements Strategy {
 
-    @Override
-    public boolean betting(Deck currDeck, int gameValue, Dealer myDealer) {
-        Random randInt = new Random();
+    public static boolean betting(Deck currDeck, int gameValue, Dealer myDealer) {
+        Random random = new Random();
 
-        int random = 0 + randInt.nextInt(1);
-        return random == 0 ? true : false;
+        if (random.nextBoolean()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void testOutput() {

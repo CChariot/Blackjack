@@ -1,6 +1,6 @@
 public class MemorizeStrategy implements Strategy {
 
-    public boolean betting(Deck currDeck, int gameValue, Dealer myDealer) {
+    public static boolean betting(Deck currDeck, int gameValue, Dealer myDealer) {
         int countBig = 0, countSmall = 0;
         for (int i : currDeck.DealtCard) {
             if (i < 7) countSmall++;
