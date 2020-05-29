@@ -7,8 +7,20 @@ public class actualGame {
 //        System.out.println("Game started.");
 //        Manager.playGame();
 
-        RandomGameManager RandomStrategy = RandomGameManager.getInstance();
+//        RandomGameManager RandomStrategy = RandomGameManager.getInstance();
+//        System.out.println("Game started.");
+//        RandomStrategy.playGame();
+//
+//        TableGameManager TableStrategy = TableGameManager.getInstance();
+//        System.out.println("Game started.");
+//        TableStrategy.playGame();
+
+//        CountGameManager CountStrategy = CountGameManager.getInstance();
+//        System.out.println("Game started.");
+//        CountStrategy.playGame();
+
+        MemorizeGameManager MemorizeStrategy = MemorizeGameManager.getInstance();
         System.out.println("Game started.");
-        RandomStrategy.playGame();
+        MemorizeStrategy.playGame();
     }
 }

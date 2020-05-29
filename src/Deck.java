@@ -44,6 +44,7 @@ class Deck {
             currDeck[i] = currDeck[random];
             currDeck[random] = temp;
         }
+        count = 0;
         cardUsed = 0;
     }
 

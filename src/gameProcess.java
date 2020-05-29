@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 //Builder Design Pattern
 public interface gameProcess {
     void initializeDeck();
@@ -8,7 +10,7 @@ public interface gameProcess {
 
     void takeBetting(Player[] players_pool);
 
-    void playersHit(Player[] players_pool, Dealer myDealer, Deck currDeck);
+    void playersHit(Player[] players_pool, Dealer myDealer, Deck currDeck) throws IOException;
 
     void countMoney(Player[] players_pool, Dealer myDealer);
 

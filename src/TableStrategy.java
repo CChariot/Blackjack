@@ -2,10 +2,10 @@ import java.io.IOException;
 import java.util.Random;
 
 public class TableStrategy implements Strategy {
-    boolean shouldBet = false;
-    int hitPercentage = 0;
+    static boolean shouldBet = false;
+    static int hitPercentage = 0;
 
-    public boolean betting(Deck currDeck, int gameValue, Dealer myDealer) throws IOException {
+    public static boolean betting(Deck currDeck, int gameValue, Dealer myDealer) throws IOException {
         GetPropertyValues properties = new GetPropertyValues();
         String stringValue = Integer.toString(gameValue);
 
@@ -18,7 +18,7 @@ public class TableStrategy implements Strategy {
         System.out.println("This is Table Strategy.");
     }
 
-    public boolean percent(int percentage) {
+    public static boolean percent(int percentage) {
         Random rand = new Random();
         return (rand.nextInt(100) < percentage);
     }
