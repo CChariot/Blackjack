@@ -52,7 +52,8 @@ public class RandomGameManager implements gameProcess {
         //initialize dealer
         Dealer myDealer = (Dealer) PlayerFactory.getPlayer("Dealer");
 
-        while (!needsRefill(players_pool)) {
+        int game_played = 0;
+        while (game_played < 1000) {
             //taking bets
             takeBetting(players_pool);
 
@@ -79,8 +80,12 @@ public class RandomGameManager implements gameProcess {
             displayMoney(players_pool, myDealer);
             //clean players and dealer hand
             cleanTable(players_pool, myDealer);
+            game_played++;
         }
-        System.out.format("Player won: %d games, Dealer won: %d games. Amount of draw: %d.", Player_won, Dealer_won, draw);
+        double winPercentage = (double) Player_won / (double) (Player_won + Dealer_won);
+
+        System.out.format("Player won: %d games, Dealer won: %d games. Amount of draw: %d.\n", Player_won, Dealer_won, draw);
+        System.out.print("Winning Percentage is: " + winPercentage);
     }
 
     @Override

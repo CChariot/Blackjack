@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d392334-f9fc-4a53-967a-227f2253f43a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CountGameManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MemorizeGameManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TableGameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/Deck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CountStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CountStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TableStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MemorizeGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MemorizeGameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RandomGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RandomGameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actualGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actualGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameProcess.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590720801333</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fixed config file, implemented test cases for strategies.">
+      <created>1590777467102</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1590777467102</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -193,19 +193,9 @@
     <MESSAGE value="Implemented Memorize Strategy" />
     <MESSAGE value="Fixed splitting error. Implemented Count Strategy" />
     <MESSAGE value="Implemented Random Strategy main class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Random Strategy main class." />
+    <MESSAGE value="Fixed config file, implemented test cases for strategies." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed config file, implemented test cases for strategies." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/RandomGameManager.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
