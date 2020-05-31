@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0d392334-f9fc-4a53-967a-227f2253f43a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MemorizeGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MemorizeGameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RandomGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RandomGameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actualGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actualGame.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -167,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590777467102</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Tested Winning Percentage for different strategies.">
+      <created>1590851604030</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1590851604031</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,7 +200,8 @@
     <MESSAGE value="Fixed splitting error. Implemented Count Strategy" />
     <MESSAGE value="Implemented Random Strategy main class." />
     <MESSAGE value="Fixed config file, implemented test cases for strategies." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed config file, implemented test cases for strategies." />
+    <MESSAGE value="Tested Winning Percentage for different strategies." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tested Winning Percentage for different strategies." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

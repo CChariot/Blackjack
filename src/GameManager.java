@@ -1,4 +1,6 @@
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 //Using Builder Design Pattern
@@ -56,6 +58,7 @@ public class GameManager implements gameProcess {
             players_pool[i] = (Player) PlayerFactory.getPlayer("Player");
         }
 
+
         //initialize dealer
         Dealer myDealer = (Dealer) PlayerFactory.getPlayer("Dealer");
 
@@ -88,6 +91,7 @@ public class GameManager implements gameProcess {
             cleanTable(players_pool,myDealer);
         }
         System.out.format("Player won: %d games, Dealer won: %d games. Amount of draw: %d.", Player_won, Dealer_won, draw);
+
     }
 
     @Override
